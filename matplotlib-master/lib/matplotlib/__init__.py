@@ -517,9 +517,10 @@ def _get_home():
     :see:
         http://mail.python.org/pipermail/python-list/2005-February/325395.html
     """
-    #ben's changed
     try:
+        #checking if home override variable set MATPDIR
         path = os.environ.get('MATPDIR')
+        #if not, check for other home directories
         if path is None:
             if six.PY2 and sys.platform == 'win32':
                 path = os.path.expanduser(b"~").decode(sys.getfilesystemencoding())
