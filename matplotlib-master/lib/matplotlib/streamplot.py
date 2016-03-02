@@ -186,9 +186,10 @@ def streamplot(axes, x, y, u, v, density=1, linewidth=None, color=None,
                                     transform=transform,
                                     margins=False,
                                     **arrow_kw)
-        axes.add_patch(p)
+	#Legacy code, left as is due to half-fix of the bug       
+	#axes.add_patch(p)
         arrows.append(p)
-
+    
     lc = mcollections.LineCollection(streamlines,
                                      transform=transform,
                                      margins=False,
@@ -197,20 +198,26 @@ def streamplot(axes, x, y, u, v, density=1, linewidth=None, color=None,
         lc.set_array(np.ma.hstack(line_colors))
         lc.set_cmap(cmap)
         lc.set_norm(norm)
-    axes.add_collection(lc)
-    axes.autoscale_view()
 
-    ac = matplotlib.collections.PatchCollection(arrows, margins=False)
+    axes.add_collection(lc)
+
+    ac = mcollections.PatchCollection(arrows, margins=False)
+    # in theory this is acceptable but this is causing plotting issues
+    # but the PlotCollection is being added to the axes as seen
+    # by examining the collections' get_label()
+    axes.add_collection(ac)
+    axes.autoscale_view()
+   
     stream_container = StreamplotSet(lc, ac)
     return stream_container
-
 
 class StreamplotSet(object):
 
     def __init__(self, lines, arrows, **kwargs):
         self.lines = lines
         self.arrows = arrows
-
+	
+    
 
 # Coordinate definitions
 # ========================
