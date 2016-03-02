@@ -4,6 +4,17 @@ import sys
 import six
 import matplotlib
 
+"""
+These tests ensure that a user who uses matplot lib can control the home directory it uses.
+
+Examples:
+$export MATPDIR=/root
+$python3
+>>>import matplotlib
+>>>matplotlib._get_home()
+'/root'
+"""
+
 class EnvironVarTest(unittest.TestCase):
     def test_no_var(self):
         #linux test
