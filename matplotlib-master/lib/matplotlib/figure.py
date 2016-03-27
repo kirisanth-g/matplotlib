@@ -259,6 +259,12 @@ class Figure(Artist):
        function.  If suppressComposite is True|False, this will
        override the renderer.
     """
+    
+    pyav_current_fig = 0
+    pyav_current_names = {}
+    
+    def pyav_addtomovie(self):
+    	Figure.pyav_current_names['image%05d.png' % self.pyav_fignum] = self
 
     def __str__(self):
         return "Figure(%gx%g)" % tuple(self.bbox.size)
@@ -303,6 +309,9 @@ class Figure(Artist):
             overridden.
             Defaults to rc ``figure.autolayout``.
         """
+        Figure.pyav_current_fig += 1
+        self.pyav_fignum = Figure.pyav_current_fig
+        
         Artist.__init__(self)
         # remove the non-figure artist _axes property
         # as it makes no sense for a figure to be _in_ an axes

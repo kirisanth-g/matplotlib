@@ -65,6 +65,15 @@ from .ticker import TickHelper, Formatter, FixedFormatter, NullFormatter,\
            Locator, IndexLocator, FixedLocator, NullLocator,\
            LinearLocator, LogLocator, AutoLocator, MultipleLocator,\
            MaxNLocator
+           
+import os
+           
+def make_movie():
+	for k, v in Figure.pyav_current_names.items():
+		v.savefig(k)
+	os.system('ffmpeg -f image2 -r 1/5 -i image%05d.png -vcodec mpeg4 -y movie.mp4')
+	for name in Figure.pyav_current_names.keys():
+		os.remove(name)
 
 
 ## Backend detection ##
