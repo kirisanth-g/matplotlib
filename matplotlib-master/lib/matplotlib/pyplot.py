@@ -71,7 +71,7 @@ import os
 def make_movie(name, fps):
 	for k, v in Figure.pyav_current_names.items():
 		v.savefig(k)
-	os.system('ffmpeg -f image2 -r' + fps +  '-i matp_image%05d.png -vcodec mpeg4 -y')
+	os.system('ffmpeg -f image2 -r ' + fps +  ' -i matp_image%05d.png -vcodec mpeg4 -y ' + name)
 	for name in Figure.pyav_current_names.keys():
 		os.remove(name)
 
