@@ -1149,7 +1149,7 @@ def subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze=True,
     return fig, axs
 
 
-def subplot2grid(shape, loc, rowspan=1, colspan=1, fig=None **kwargs):
+def subplot2grid(shape, loc, rowspan=1, colspan=1, fig=None, **kwargs):
     """
     Create a subplot in a grid.  The grid is specified by *shape*, at
     location of *loc*, spanning *rowspan*, *colspan* cells in each
