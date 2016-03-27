@@ -68,10 +68,10 @@ from .ticker import TickHelper, Formatter, FixedFormatter, NullFormatter,\
            
 import os
            
-def make_movie():
+def make_movie(name, fps):
 	for k, v in Figure.pyav_current_names.items():
 		v.savefig(k)
-	os.system('ffmpeg -f image2 -r 1/5 -i image%05d.png -vcodec mpeg4 -y movie.mp4')
+	os.system('ffmpeg -f image2 -r' + fps +  '-i matp_image%05d.png -vcodec mpeg4 -y')
 	for name in Figure.pyav_current_names.keys():
 		os.remove(name)
 

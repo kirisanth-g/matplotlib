@@ -264,7 +264,7 @@ class Figure(Artist):
     pyav_current_names = {}
     
     def pyav_addtomovie(self):
-    	Figure.pyav_current_names['image%05d.png' % self.pyav_fignum] = self
+    	Figure.pyav_current_names['matp_image%05d.png' % self.pyav_fignum] = self
 
     def __str__(self):
         return "Figure(%gx%g)" % tuple(self.bbox.size)
