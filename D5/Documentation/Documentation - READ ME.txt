@@ -14,3 +14,8 @@ Feature 3 - Accepting figure argument in subplot2grid
 	Customizing Location of Subplot Using GridSpec documentation.html
 
 	*This is a modified verison of the documentation that can be found at http://matplotlib.org/users/gridspec.html Additions have been made to end of "Basic Example of using subplot2grid"
+
+
+Pyplot: pyplot — Matplotlib 1.5.1 documentation.html
+	Since Feature 2 & 3 needed addition/modification to pyplot the documentation has been added.
+	*This is a modified verison of the documentation that can be found at http://matplotlib.org/api/pyplot_api.html Additions were "matplotlib.pyplot.make_movie" and modification have been made in "matplotlib.pyplot.subplot2grid"
