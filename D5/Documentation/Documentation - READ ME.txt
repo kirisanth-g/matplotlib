@@ -1,0 +1,6 @@
+This document is here to direct which documentation is related to which feature.
+
+Feature 3 - Accepting figure argument in subplot2grid
+	Customizing Location of Subplot Using GridSpec 	documentation.html
+
+	*This is a modified verison of the documentation that can 	be found at http://matplotlib.org/users/gridspec.html
